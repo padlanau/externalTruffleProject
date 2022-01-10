@@ -35,3 +35,60 @@ Test :
 > 4. paste address 2 besides the transfer(address recipient, uint amount) button and an amount
      then click transfer
 > 5. Then go to the Government smart contract and click "getTransaction"
+
+
+    PS D:\blockchain\externalTruffleProject> truffle console
+    truffle(development)> migrate --reset
+
+    Compiling your contracts...
+    ===========================
+    > Compiling .\contracts\Bank.sol
+    > Compiling .\contracts\Destroyable.sol
+    > Compiling .\contracts\Government.sol
+    > Compiling .\contracts\Migrations.sol
+    > Compiling .\contracts\Ownable.sol
+    > Artifacts written to D:\blockchain\externalTruffleProject\build\contracts
+    > Compiled successfully using:
+       - solc: 0.8.10+commit.fc410830.Emscripten.clang
+
+
+
+    Starting migrations...
+    ======================
+    > Network name:    'development'
+    > Network id:      5777
+    > Block gas limit: 6721975 (0x6691b7)
+
+
+    1_initial_migration.js
+    ======================
+
+       Deploying 'Migrations'
+       ----------------------
+       > transaction hash:    0x2eb1e00fdab1558b36f41bca93fc301ddb446d11cf8a0878fc64950dd7cd3b3f
+       > Blocks: 0            Seconds: 0
+       > contract address:    0x055d454E204b4f04C407820ee99362D3cF910075
+       > block number:        245
+       > block timestamp:     1641806175
+       > account:             0x949CE02E352E9Ed86AdcCeC797474Efaf6034e91
+       > balance:             93.879891919987
+       > gas used:            248854 (0x3cc16)
+       > gas price:           20 gwei
+       > value sent:          0 ETH
+       > total cost:          0.00497708 ETH
+
+
+       > Saving migration to chain.
+       > Saving artifacts
+       -------------------------------------
+       > Total cost:          0.00497708 ETH
+
+
+    Summary
+    =======
+    > Total deployments:   1
+    > Final cost:          0.00497708 ETH
+
+
+    - Blocks: 0            Seconds: 0
+    - Saving migration to chain.
