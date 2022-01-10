@@ -36,10 +36,10 @@ Test :
      then click transfer
 > 5. Then go to the Government smart contract and click "getTransaction"
 
-
-    PS D:\blockchain\externalTruffleProject> truffle console
-    truffle(development)> migrate --reset
-
+Migrate (run from the terminal and make sure your Ganache is open) :
+> - D:\blockchain\externalTruffleProject> truffle console (only if you are not in the console yet)
+> - truffle(development)> migrate --reset (only use migrate if this is your first time) 
+> 
     Compiling your contracts...
     ===========================
     > Compiling .\contracts\Bank.sol
