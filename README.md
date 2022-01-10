@@ -9,19 +9,24 @@ Complete Steps to call an EXTERNAL smart contract :
  > 3. know the smart contract's function's definition are e.g. its parameters, return values
  > 4. then interact with it and add its address
  > 5. optional, sending money to an external call
- >    5.1. add payable
-           // from Bank.sol
-              interface GovernmentInterface {
-                  function addTransaction(address _from, address _top, uint _amount) external payable; 
-              }
-
-           // from Government.sol
-               function addTransaction(address _ from, address _top, uint _amount) external payable{
-                      logs.push(Transaction(_from, _to, _amount, logs.length));
-               }
-
-  >    5.2. add {value}
-                    instance.addTransaction{value: 1 ether}.(msg.sender, recipient, amount);                     
+ > 
+   - 5.1. add payable
+      - from Bank.sol
+          ```
+            interface GovernmentInterface {
+                       function addTransaction(address _from, address _top, uint _amount) external payable; 
+                    }
+           ```       
+       - from Government.sol
+       ```
+           function addTransaction(address _ from, address _top, uint _amount) external payable{
+                            logs.push(Transaction(_from, _to, _amount, logs.length));
+                    }
+       ```
+   - 5.2. add {value}
+       ```
+           instance.addTransaction{value: 1 ether}.(msg.sender, recipient, amount);  
+       ```
 
 Test :
 > 1. deploy Bank.sol
