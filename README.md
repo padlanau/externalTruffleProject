@@ -1,6 +1,6 @@
 # externalTruffleProject
 
-A simply smart contract to demonstrate External calls. It requires the bank to report all the bank transactions to the government.
+## A simply smart contract to demonstrate External calls. It requires the bank to report all the bank transactions to the government.
 
 Complete Steps to call an EXTERNAL smart contract :  
 
