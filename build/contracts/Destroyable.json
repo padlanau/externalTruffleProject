@@ -1,0 +1,623 @@
+{
+  "contractName": "Destroyable",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "destroy",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"destroy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Lodgerio Padlan\",\"details\":\"https://articles.caster.io/blockchain/self-destructing-smart-contracts-in-ethereum/    \",\"kind\":\"dev\",\"methods\":{},\"title\":\"Destroyable  \",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"A simply smart contract to demonstrate External calls     It requires the bank to report all the bank transactions \",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Destroyable.sol\":\"Destroyable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Destroyable.sol\":{\"keccak256\":\"0xeee5e6ec34da549c72f99e08d195d6c76e55f903ee1d4a5928271ddcbcc8b00d\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://1235c84fe8435c61b058e478af764b9d3ffc61b714a9c024f30310ec52983564\",\"dweb:/ipfs/QmfSc2pDB4RM6o6rd6aG2896kK9fmS6sMFXp33uT9JcS9f\"]},\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x76dea200b477d042059e976c43becdb6ee5c2fef86686f278be2a36276e5649b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://09e7dcc67b08ca918af1becc04a5b7c980a9de57188a3c36d7173d859374208e\",\"dweb:/ipfs/QmSjer5bSdBKDMcBEGzqB6PG4n8hb21ZYSTv5T8GuewUvs\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060e08061005f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c806383197ef014602d575b600080fd5b60336035565b005b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614608c57600080fd5b60003390508073ffffffffffffffffffffffffffffffffffffffff16fffea26469706673582212204ecfdfd093e65306b759a23b7eedf8b5486f3c43e2bfc198b6c5dcfec9ff8bd764736f6c634300080a0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c806383197ef014602d575b600080fd5b60336035565b005b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614608c57600080fd5b60003390508073ffffffffffffffffffffffffffffffffffffffff16fffea26469706673582212204ecfdfd093e65306b759a23b7eedf8b5486f3c43e2bfc198b6c5dcfec9ff8bd764736f6c634300080a0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "393:166:1:-:0;;;;;;;;;;;;;482:10:4;474:5;;:18;;;;;;;;;;;;;;;;;;393:166:1;;;;;;",
+  "deployedSourceMap": "393:166:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;432:124;;;:::i;:::-;;;393:5:4;;;;;;;;;;379:19;;:10;:19;;;371:28;;;;;;475:24:1::1;510:10;475:46;;541:8;528:22;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.10;\r\nimport \"./Ownable.sol\";\r\n\r\n\r\n/**\r\n * @title  Destroyable  \r\n * @author Lodgerio Padlan\r\n * @dev    https://articles.caster.io/blockchain/self-destructing-smart-contracts-in-ethereum/    \r\n * @notice A simply smart contract to demonstrate External calls    \r\n           It requires the bank to report all the bank transactions \r\n*/\r\n\r\ncontract Destroyable is Ownable {\r\n\r\n  function destroy() public onlyOwner {\r\n    address payable receiver = payable(msg.sender);\r\n    selfdestruct(receiver);\r\n  }\r\n}",
+  "sourcePath": "D:\\blockchain\\externalTruffleProject\\contracts\\Destroyable.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Destroyable.sol",
+    "exportedSymbols": {
+      "Destroyable": [
+        212
+      ],
+      "Ownable": [
+        348
+      ]
+    },
+    "id": 213,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 189,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:1"
+      },
+      {
+        "absolutePath": "project:/contracts/Ownable.sol",
+        "file": "./Ownable.sol",
+        "id": 190,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 213,
+        "sourceUnit": 349,
+        "src": "59:23:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 192,
+              "name": "Ownable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 348,
+              "src": "417:7:1"
+            },
+            "id": 193,
+            "nodeType": "InheritanceSpecifier",
+            "src": "417:7:1"
+          }
+        ],
+        "canonicalName": "Destroyable",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 191,
+          "nodeType": "StructuredDocumentation",
+          "src": "88:301:1",
+          "text": " @title  Destroyable  \n @author Lodgerio Padlan\n @dev    https://articles.caster.io/blockchain/self-destructing-smart-contracts-in-ethereum/    \n @notice A simply smart contract to demonstrate External calls    \nIt requires the bank to report all the bank transactions "
+        },
+        "fullyImplemented": true,
+        "id": 212,
+        "linearizedBaseContracts": [
+          212,
+          348
+        ],
+        "name": "Destroyable",
+        "nameLocation": "402:11:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 210,
+              "nodeType": "Block",
+              "src": "468:88:1",
+              "statements": [
+                {
+                  "assignments": [
+                    199
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 199,
+                      "mutability": "mutable",
+                      "name": "receiver",
+                      "nameLocation": "491:8:1",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 210,
+                      "src": "475:24:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      },
+                      "typeName": {
+                        "id": 198,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "475:15:1",
+                        "stateMutability": "payable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 205,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 202,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "510:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 203,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "510:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 201,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "502:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_payable_$",
+                        "typeString": "type(address payable)"
+                      },
+                      "typeName": {
+                        "id": 200,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "502:8:1",
+                        "stateMutability": "payable",
+                        "typeDescriptions": {}
+                      }
+                    },
+                    "id": 204,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "502:19:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "475:46:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 207,
+                        "name": "receiver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 199,
+                        "src": "541:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 206,
+                      "name": "selfdestruct",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967275,
+                      "src": "528:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
+                        "typeString": "function (address payable)"
+                      }
+                    },
+                    "id": 208,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "528:22:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 209,
+                  "nodeType": "ExpressionStatement",
+                  "src": "528:22:1"
+                }
+              ]
+            },
+            "functionSelector": "83197ef0",
+            "id": 211,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 196,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 195,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 338,
+                  "src": "458:9:1"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "458:9:1"
+              }
+            ],
+            "name": "destroy",
+            "nameLocation": "441:7:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 194,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "448:2:1"
+            },
+            "returnParameters": {
+              "id": 197,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "468:0:1"
+            },
+            "scope": 212,
+            "src": "432:124:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 213,
+        "src": "393:166:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:526:1"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/Destroyable.sol",
+    "exportedSymbols": {
+      "Destroyable": [
+        212
+      ],
+      "Ownable": [
+        348
+      ]
+    },
+    "id": 213,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 189,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:1"
+      },
+      {
+        "absolutePath": "project:/contracts/Ownable.sol",
+        "file": "./Ownable.sol",
+        "id": 190,
+        "nameLocation": "-1:-1:-1",
+        "nodeType": "ImportDirective",
+        "scope": 213,
+        "sourceUnit": 349,
+        "src": "59:23:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 192,
+              "name": "Ownable",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 348,
+              "src": "417:7:1"
+            },
+            "id": 193,
+            "nodeType": "InheritanceSpecifier",
+            "src": "417:7:1"
+          }
+        ],
+        "canonicalName": "Destroyable",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 191,
+          "nodeType": "StructuredDocumentation",
+          "src": "88:301:1",
+          "text": " @title  Destroyable  \n @author Lodgerio Padlan\n @dev    https://articles.caster.io/blockchain/self-destructing-smart-contracts-in-ethereum/    \n @notice A simply smart contract to demonstrate External calls    \nIt requires the bank to report all the bank transactions "
+        },
+        "fullyImplemented": true,
+        "id": 212,
+        "linearizedBaseContracts": [
+          212,
+          348
+        ],
+        "name": "Destroyable",
+        "nameLocation": "402:11:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 210,
+              "nodeType": "Block",
+              "src": "468:88:1",
+              "statements": [
+                {
+                  "assignments": [
+                    199
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 199,
+                      "mutability": "mutable",
+                      "name": "receiver",
+                      "nameLocation": "491:8:1",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 210,
+                      "src": "475:24:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      },
+                      "typeName": {
+                        "id": 198,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "475:15:1",
+                        "stateMutability": "payable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 205,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "expression": {
+                          "id": 202,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4294967281,
+                          "src": "510:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 203,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "src": "510:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 201,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "502:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_payable_$",
+                        "typeString": "type(address payable)"
+                      },
+                      "typeName": {
+                        "id": 200,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "502:8:1",
+                        "stateMutability": "payable",
+                        "typeDescriptions": {}
+                      }
+                    },
+                    "id": 204,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "502:19:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "475:46:1"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 207,
+                        "name": "receiver",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 199,
+                        "src": "541:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 206,
+                      "name": "selfdestruct",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4294967275,
+                      "src": "528:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_selfdestruct_nonpayable$_t_address_payable_$returns$__$",
+                        "typeString": "function (address payable)"
+                      }
+                    },
+                    "id": 208,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "528:22:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 209,
+                  "nodeType": "ExpressionStatement",
+                  "src": "528:22:1"
+                }
+              ]
+            },
+            "functionSelector": "83197ef0",
+            "id": 211,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "id": 196,
+                "kind": "modifierInvocation",
+                "modifierName": {
+                  "id": 195,
+                  "name": "onlyOwner",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 338,
+                  "src": "458:9:1"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "458:9:1"
+              }
+            ],
+            "name": "destroy",
+            "nameLocation": "441:7:1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 194,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "448:2:1"
+            },
+            "returnParameters": {
+              "id": 197,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "468:0:1"
+            },
+            "scope": 212,
+            "src": "432:124:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 213,
+        "src": "393:166:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:526:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-01-06T12:02:11.643Z",
+  "devdoc": {
+    "author": "Lodgerio Padlan",
+    "details": "https://articles.caster.io/blockchain/self-destructing-smart-contracts-in-ethereum/    ",
+    "kind": "dev",
+    "methods": {},
+    "title": "Destroyable  ",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "A simply smart contract to demonstrate External calls     It requires the bank to report all the bank transactions ",
+    "version": 1
+  }
+}

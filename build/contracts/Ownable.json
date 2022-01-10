@@ -1,0 +1,632 @@
+{
+  "contractName": "Ownable",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"author\":\"Lodgerio Padlan\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Ownable  \",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"A simply smart contract to demonstrate External calls     It requires the bank to report all the bank transactions \",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Ownable.sol\":\"Ownable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/Ownable.sol\":{\"keccak256\":\"0x76dea200b477d042059e976c43becdb6ee5c2fef86686f278be2a36276e5649b\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://09e7dcc67b08ca918af1becc04a5b7c980a9de57188a3c36d7173d859374208e\",\"dweb:/ipfs/QmSjer5bSdBKDMcBEGzqB6PG4n8hb21ZYSTv5T8GuewUvs\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550603f80605d6000396000f3fe6080604052600080fdfea2646970667358221220f282b9cd4b502b770d88e7f6b27da83d4a147c716869434fcb9a2191a456ad7064736f6c634300080a0033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220f282b9cd4b502b770d88e7f6b27da83d4a147c716869434fcb9a2191a456ad7064736f6c634300080a0033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "280:224:4:-:0;;;450:50;;;;;;;;;;482:10;474:5;;:18;;;;;;;;;;;;;;;;;;280:224;;;;;;",
+  "deployedSourceMap": "280:224:4:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.10;\r\n\r\n/**\r\n * @title  Ownable  \r\n * @author Lodgerio Padlan\r\n * @dev        \r\n * @notice A simply smart contract to demonstrate External calls    \r\n           It requires the bank to report all the bank transactions \r\n*/\r\n\r\n contract Ownable {\r\n\r\n    address internal owner;\r\n    \r\n    modifier onlyOwner {\r\n        require(msg.sender == owner);\r\n        _; //run the function\r\n    }\r\n    \r\n    constructor(){\r\n        owner = msg.sender;\r\n    }\r\n }",
+  "sourcePath": "D:\\blockchain\\externalTruffleProject\\contracts\\Ownable.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/Ownable.sol",
+    "exportedSymbols": {
+      "Ownable": [
+        348
+      ]
+    },
+    "id": 349,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 324,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:4"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Ownable",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 325,
+          "nodeType": "StructuredDocumentation",
+          "src": "61:214:4",
+          "text": " @title  Ownable  \n @author Lodgerio Padlan\n @dev        \n @notice A simply smart contract to demonstrate External calls    \nIt requires the bank to report all the bank transactions "
+        },
+        "fullyImplemented": true,
+        "id": 348,
+        "linearizedBaseContracts": [
+          348
+        ],
+        "name": "Ownable",
+        "nameLocation": "289:7:4",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 327,
+            "mutability": "mutable",
+            "name": "owner",
+            "nameLocation": "323:5:4",
+            "nodeType": "VariableDeclaration",
+            "scope": 348,
+            "src": "306:22:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 326,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "306:7:4",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 337,
+              "nodeType": "Block",
+              "src": "360:78:4",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 333,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 330,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967281,
+                            "src": "379:3:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 331,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "src": "379:10:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "id": 332,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 327,
+                          "src": "393:5:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "379:19:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 329,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "371:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 334,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "371:28:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 335,
+                  "nodeType": "ExpressionStatement",
+                  "src": "371:28:4"
+                },
+                {
+                  "id": 336,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "410:1:4"
+                }
+              ]
+            },
+            "id": 338,
+            "name": "onlyOwner",
+            "nameLocation": "350:9:4",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 328,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "360:0:4"
+            },
+            "src": "341:97:4",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 346,
+              "nodeType": "Block",
+              "src": "463:37:4",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 344,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 341,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 327,
+                      "src": "474:5:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 342,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "482:3:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 343,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "482:10:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "474:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 345,
+                  "nodeType": "ExpressionStatement",
+                  "src": "474:18:4"
+                }
+              ]
+            },
+            "id": 347,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 339,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "461:2:4"
+            },
+            "returnParameters": {
+              "id": 340,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "463:0:4"
+            },
+            "scope": 348,
+            "src": "450:50:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 349,
+        "src": "280:224:4",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:471:4"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/Ownable.sol",
+    "exportedSymbols": {
+      "Ownable": [
+        348
+      ]
+    },
+    "id": 349,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 324,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:24:4"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "Ownable",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 325,
+          "nodeType": "StructuredDocumentation",
+          "src": "61:214:4",
+          "text": " @title  Ownable  \n @author Lodgerio Padlan\n @dev        \n @notice A simply smart contract to demonstrate External calls    \nIt requires the bank to report all the bank transactions "
+        },
+        "fullyImplemented": true,
+        "id": 348,
+        "linearizedBaseContracts": [
+          348
+        ],
+        "name": "Ownable",
+        "nameLocation": "289:7:4",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 327,
+            "mutability": "mutable",
+            "name": "owner",
+            "nameLocation": "323:5:4",
+            "nodeType": "VariableDeclaration",
+            "scope": 348,
+            "src": "306:22:4",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 326,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "306:7:4",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 337,
+              "nodeType": "Block",
+              "src": "360:78:4",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 333,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "expression": {
+                            "id": 330,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4294967281,
+                            "src": "379:3:4",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 331,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "src": "379:10:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "id": 332,
+                          "name": "owner",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 327,
+                          "src": "393:5:4",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "379:19:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 329,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        4294967278,
+                        4294967278
+                      ],
+                      "referencedDeclaration": 4294967278,
+                      "src": "371:7:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 334,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "371:28:4",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 335,
+                  "nodeType": "ExpressionStatement",
+                  "src": "371:28:4"
+                },
+                {
+                  "id": 336,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "410:1:4"
+                }
+              ]
+            },
+            "id": 338,
+            "name": "onlyOwner",
+            "nameLocation": "350:9:4",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 328,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "360:0:4"
+            },
+            "src": "341:97:4",
+            "virtual": false,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 346,
+              "nodeType": "Block",
+              "src": "463:37:4",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 344,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 341,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 327,
+                      "src": "474:5:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "expression": {
+                        "id": 342,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4294967281,
+                        "src": "482:3:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 343,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "sender",
+                      "nodeType": "MemberAccess",
+                      "src": "482:10:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "474:18:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 345,
+                  "nodeType": "ExpressionStatement",
+                  "src": "474:18:4"
+                }
+              ]
+            },
+            "id": 347,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 339,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "461:2:4"
+            },
+            "returnParameters": {
+              "id": 340,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "463:0:4"
+            },
+            "scope": 348,
+            "src": "450:50:4",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 349,
+        "src": "280:224:4",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:471:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.10+commit.fc410830.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-01-06T12:02:11.652Z",
+  "devdoc": {
+    "author": "Lodgerio Padlan",
+    "kind": "dev",
+    "methods": {},
+    "title": "Ownable  ",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "A simply smart contract to demonstrate External calls     It requires the bank to report all the bank transactions ",
+    "version": 1
+  }
+}
